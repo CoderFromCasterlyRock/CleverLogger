@@ -1,0 +1,7 @@
+1. Warm up the logger.
+2. Add the name of the class which logs.
+3. Format the time as HH:MM:SS:SSS.
+4. Eliminate the use of StringBuilder in MessageFormatter.
+5. Add performance tests.
+6. Fix logback.xml for internal use.
+7. Consider using ByteBuffer. 

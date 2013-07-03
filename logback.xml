@@ -1,0 +1,27 @@
+<configuration debug="true">
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    	<encoder>
+      		<pattern>%d %5p | %t | %-55logger{55} | %m %n</pattern>
+    	</encoder>
+  	</appender>
+  
+  	<appender name="PERF_FILE_APPENDER" class="ch.qos.logback.core.FileAppender">
+    	<file>PerfLogbackTest.log</file>
+    	<append>true</append>
+    	<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    	<encoder>
+      		<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    	</encoder>
+  	</appender>
+  
+  	 <appender name="PERF_ASYNC_APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+    	<appender-ref ref="PERF_FILE_APPENDER" />
+  	</appender>
+  
+  	<root level="DEBUG">
+    	<appender-ref ref="CONSOLE" />
+    	<appender-ref ref="PERF_ASYNC_APPENDER" />
+  	</root>
+  
+</configuration>
